@@ -13,8 +13,8 @@ log={}
 
 no_of_racks = 10
 no_of_datanodes = 10
-no_of_files = 1000
-no_of_blocks = 100
+no_of_files = 100000
+no_of_blocks = 10000
 
 f= open("disk_log.txt","w")
 
