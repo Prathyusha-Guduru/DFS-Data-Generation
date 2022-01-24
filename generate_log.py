@@ -60,40 +60,14 @@ for i in file_blocks:
 			second_node = random.sample(list(random_rack[-1].values())[-1],1)
 			print(f"second node {second_node}")
 		
-		if(random_rack[-1] in data_node):
-			print("YES")
-		else:
-			print("SORRY!")
-		print(f"first rack is {random_rack}")
-		# third_rack = random.sample(data_node.remove(random_rack),1)
-		# third_node = random.sample(list(third_rack[-1].values())[-1],1)
-		# print(third_node)
+		
+		z = data_node
+		z.remove(random_rack[-1])
+		third_rack = random.sample(z,1)
+		third_node = random.sample(list(third_rack[-1].values())[-1],1)
+		print(third_node)
 		# print(list(random_rack[-1].values())[-1])
 
 
 print(f"\n\n\n{data_node}")
 
-
-
-
-
-
-# for i in range(1,10):
-# 	log["F"+str(i)]=[]
-# 	for j in range(1,5):         #10 blocks
-# 		k=random.randint(0,9)      #1000 Files,100 Blocks per each File
-# 		l=random.randint(0,9)       #10 Racks,10 Datanodes
-# 		m=random.randint(1,10)     #Each Block Replication Factor=3
-# 		n=random.randint(1,10)
-# 		o=random.randint(1,10)
-# 		while k==m:
-# 			m=random.randint(1,10)
-# 		s="F"+str(i)+" "+"F"+str(i)+"B"+str(j)+" "+"R"+str(k)+"D"+str(l)+" "+"R"+str(k)+"D"+str(o)+" "+"R"+str(m) +"D"+str(n)
-
-# 		log["F"+str(i)].append(["B"+str(j),"R"+str(k),"D"+str(l),"R"+str(k),"D"+str(o),"R"+str(m),"D"+str(n)])
-
-# 		f.write(s+'\n')
-# print("Disk is ready")
-# #print(Disk)
-
-# f.close()
