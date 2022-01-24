@@ -2,6 +2,7 @@
 #Task : Generate DFS using Hadoop replication factors
 
 #Importing necessary libraries
+from distutils.command.build_scripts import first_line_re
 import random
 import sys
 import functools
@@ -48,7 +49,29 @@ for i in range(0,len(files)):
 
 for i in file_blocks:
 	for j in i.values():
-		first_address = random.sample()
+		random_rack = random.sample(data_node,1)
+		random_node = random.sample(list(random_rack[-1].values())[-1],1)
+		print(random_node)
+
+		second_node = random.sample(list(random_rack[-1].values())[-1],1)
+		if(second_node != random_node):
+			print(f"second node {second_node}")
+		else:
+			second_node = random.sample(list(random_rack[-1].values())[-1],1)
+			print(f"second node {second_node}")
+		
+		if(random_rack[-1] in data_node):
+			print("YES")
+		else:
+			print("SORRY!")
+		print(f"first rack is {random_rack}")
+		# third_rack = random.sample(data_node.remove(random_rack),1)
+		# third_node = random.sample(list(third_rack[-1].values())[-1],1)
+		# print(third_node)
+		# print(list(random_rack[-1].values())[-1])
+
+
+print(f"\n\n\n{data_node}")
 
 
 
